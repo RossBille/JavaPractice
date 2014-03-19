@@ -76,9 +76,14 @@ public class DuplicateNumbersTest
 		assertTrue(ints.contains(result));
 	}
 	
+	@Test
+	public void testGetDuplicateEmpty(){
+		System.out.println("getDuplicate-Empty");
+		
+	}
 	@Test 
 	public void testFindDuplicateEmpty(){
-		System.out.println("getDuplicate-Fail");
+		System.out.println("findDuplicate-Empty");
 		List<Integer> ints = new LinkedList();
 		int result = DuplicateNumbers.findDuplicate(ints);
 		int expected = -1;
