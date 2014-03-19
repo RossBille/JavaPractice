@@ -17,9 +17,11 @@ public class DuplicateNumbers
 		for(int i=1;i<100;i++){
 			ints.add(i);
 		}
-		addDuplicate(ints);
+		int add = getDuplicate(ints);
+		System.out.println("Adding: " + add);
+		ints.add(add);
 		Collections.shuffle(ints);
-		System.out.println("dumplicate: "+findDuplicate(ints));
+		System.out.println("duplicate: "+findDuplicate(ints));
 	}
 
 	/**
@@ -42,8 +44,9 @@ public class DuplicateNumbers
 	/**
 	 * selects a random Integer from the ints list and adds a new instance of it
 	 * @param ints list to add a duplicate value to
+	 * @return an int that exists in the list
 	 */
-	public static void addDuplicate(List<Integer> ints ){
+	public static int getDuplicate(List<Integer> ints ){
 		//sort list first
 		Collections.sort(ints);
 		//get mins and max nubmers from the list
@@ -54,9 +57,6 @@ public class DuplicateNumbers
 		Random rand = new  Random();
 		//get a random int between 0 and (max-min) then add min again to get the range of min->max
 		int add = rand.nextInt(max-min)+min;
-		//add to the list
-		ints.add(add);
-		
-		System.out.println("added: "+add);
+		return add;		
 	}
 }
